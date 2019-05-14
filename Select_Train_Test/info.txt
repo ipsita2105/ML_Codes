@@ -1,0 +1,58 @@
+Name   : Ipsita Singh
+Roll No: 111601033 
+
+Input is normalized and 20% is selected as testing data
+
+// Choosing the model
+
+model_selection.py
+
+compares cross validation error among the following models-
+
+* Linear Regression
+* Ridge Regression
+* Lasso
+* Elastic Net
+* Polynomial Fit (was almost same for degree 2 & 3)
+* RBF Fit
+
+Value of K for KFold validation = 10
+
+Resultant values are -
+
+Model,  negative mean squared error,    Standard Deviation
+
+Linear Regression CVE =  -6.43980802956 , 0.726734867434
+Ridge Regression CVE =  -6.90758749264 , 0.742428881445
+Lasso Regression CVE =  -7.24672982243 , 0.746930590441
+Elastic Net CVE =  -7.24672982243 , 0.746930590441
+Poly CVE =  -6.77532784063 , 0.757965967841
+RBF CVE =  -6.77062996204 , 0.764299754487
+
+From the obtained values we can conclude that
+Linear Regression performs best among them.
+
+The file also plots the corrleation heat map among 
+the data features.
+
+// Training the model
+
+Therefore the file model_train.py
+trains linear regression model on given data.
+
+On testing following values are obtained-
+
+Coefficients:
+ [[-0.00552171 -0.00140924  0.01721326 -0.02248526  0.02039384]]
+
+Mean squared error: 5.70
+
+Correlation: 0.56300721
+
+Variance score: 0.31
+
+// Testing model
+
+This code takes input file - PDBbind2015_core.dat
+
+And outputs the result obtained from this model.
